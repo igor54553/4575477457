@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата успішна</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body{display:flex;min-height:100vh;align-items:center;justify-content:center;background:#f3f5f7;color:#222}
+    .wrap{max-width:720px;background:#fff;border-radius:16px;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,.12);text-align:center}
+    .btn{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:#607d8b;color:#fff;text-decoration:none;font-weight:700}
+    .muted{opacity:.7;font-size:.95rem;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="section-title heavy-font">Дякуємо за оплату!</h1>
+    <p>Ваш доступ:</p>
+    <p><a id="productLink" class="btn" href="https://igor54553.github.io/457457457/" target="_blank" rel="noopener">Відкрити гайд</a></p>
+    <p class="muted" id="mailState">Надсилаємо посилання на вашу пошту…</p>
+  </div>
+
+  <script>
+    // === НАЛАШТУВАННЯ ===
+    const TARGET_URL   = "https://igor54553.github.io/457457457/"; // сторінка гайду
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx61UW2ZWRpUGXVJrSiuLNXCVkTIcI48kvTi3EOfXVvpoBWXHBhpOuwNTD3xVnjHuO9wQ/exec";
+    const SHARED_SECRET = "set-your-secret-here";                  // ← той самий, що в Code.gs
+
+    // показати посилання
+    document.getElementById("productLink").href = TARGET_URL;
+
+    // e-mail покупця, який ми зберегли в index.html при сабміті
+    const buyerEmail = localStorage.getItem("buyer_email");
+
+    async function sendMail() {
+      const state = document.getElementById("mailState");
+
+      if (!buyerEmail) {
+        state.textContent = "E-mail не знайдено. Скористайтесь кнопкою вище.";
+        return;
+      }
+
+      try {
+        // Відправляємо лист через Apps Script (simple request, no-cors)
+        await fetch(GAS_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            secret: SHARED_SECRET,
+            email: buyerEmail,
+            title: "Доступ до гайду",
+            link_url: TARGET_URL,
+            name: "MI.CARDIOLOGIST"
+          })
+        });
+
+        state.textContent = "Готово! Посилання надіслано на " + buyerEmail;
+        // localStorage.removeItem("buyer_email"); // опційно
+      } catch (e) {
+        state.textContent = "Не вдалося надіслати лист. Відкрийте матеріал за кнопкою вище.";
+        console.error(e);
+      }
+    }
+
+    sendMail();
+    // автоперехід через 3 сек (за бажанням можна прибрати)
+    setTimeout(() => { window.location.href = TARGET_URL; }, 3000);
+  </script>
+</body>
+</html>

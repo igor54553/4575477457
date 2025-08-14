@@ -1,0 +1,459 @@
+/* ===== RESET & BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .01em;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+body {
+  background: #e4e1e1;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* Заголовки = Bebas Neue */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.heavy-font {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Рукописні акценти = Bad Script */
+.script-font,
+blockquote, q,
+.accent-handwritten {
+  font-family: 'Bad Script', cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: .02em;
+}
+
+/* Кнопки (Montserrat) */
+button, .buy-btn, .view-guides-btn {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Цінові мітки: цифри можна підсилити */
+.price-font {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+/* ===== CONTAINERS ===== */
+.container { width: 90%; max-width: 1200px; margin: auto; padding: 40px 0; }
+
+/* ===== HEADER / NAV ===== */
+.new-header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background: linear-gradient(90deg, #fefcfb, #f8f1f1);
+  backdrop-filter: blur(10px);
+  padding: 12px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  z-index: 1000; border-bottom: 1px solid #eee;
+}
+.nav-container { max-width:1280px; margin:0 auto; display:flex; align-items:center; gap:40px; }
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+  color: #597D8A; background: transparent; border:2px solid #597D8A; border-radius: 8px;
+  padding: 6px 16px; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+.navbar { display:flex; gap:12px; flex-wrap: wrap; }
+.navbar a {
+  display:inline-block; padding:8px 18px; font-size:14px; font-weight:600;
+  color:#333; text-decoration:none; background:#fff; border-radius:25px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05); transition:.3s;
+}
+.navbar a:hover { background:#f2f7ff; color:#000; box-shadow:0 4px 10px rgba(0,0,0,.08); }
+.burger { display:none; font-size:28px; color:#333; cursor:pointer; }
+
+@media (max-width: 768px) {
+  .burger { display:block; }
+  .navbar {
+    position:absolute; top:100%; left:0; right:0; display:none;
+    flex-direction:column; align-items:center; background:rgba(255,255,255,.95);
+    backdrop-filter: blur(8px); padding:20px 0; box-shadow:0 10px 40px rgba(0,0,0,.05);
+    border-radius:0 0 20px 20px;
+  }
+  .navbar.show { display:flex; }
+  .navbar a { width:100%; text-align:center; font-size:1.1rem; }
+}
+
+/* ===== MODALS ===== */
+.modal { position: fixed; inset: 0; display: none; z-index: 9999; }
+.modal.show { display: block; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.5); }
+.modal-dialog {
+  position: relative; margin: 6vh auto; max-width: 520px; padding: 24px;
+  border-radius: 16px; backdrop-filter: blur(8px);
+  background: rgba(255,255,255,.92); color: #111;
+}
+.modal-close { position: absolute; right: 12px; top: 12px; border: none; background: transparent; font-size: 28px; cursor: pointer; }
+#buy-form { display: grid; gap: 12px; }
+#buy-form input { padding: 12px 14px; border-radius: 10px; border: 1px solid #ddd; font-size: 16px; font-family:'Montserrat',sans-serif; }
+.error { color: #c62828; min-height: 1em; display: block; }
+.status { margin-top: 10px; font-size: 14px; }
+.btn-ghost {
+  margin-top: 8px; border: 1px solid #ccc; background: #fff; padding: 10px 14px;
+  border-radius: 10px; cursor: pointer; font-size: 14px; font-family:'Montserrat',sans-serif;
+}
+
+/* ===== COURSE (HERO) ===== */
+.course-card {
+  position: relative; width: 100%; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #000; overflow: hidden;
+}
+.course-card::before {
+  content:''; position:absolute; inset:0;
+  background-image:url('img/IMG_4441.JPG');
+  background-size: cover; background-position: center 10%; background-repeat: no-repeat;
+  z-index:1; pointer-events:none;
+}
+.course-card::after { content:''; position:absolute; inset:0; background: rgba(0,0,0,.4); z-index:2; }
+.course-info {
+  position: relative; z-index: 3; max-width: 700px; width: 90%;
+  text-align: center; color:#fff; padding:20px; text-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.course-info h2 {
+  font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.4; letter-spacing:.5px;
+}
+.course-subtitle { font-size: 1.2em; color:#fffde4; margin-bottom: 10px; }
+
+/* ТЕКСТ + ЦІНА = Montserrat жирніше */
+.course-desc {
+  font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 600;
+  line-height: 1.7; margin-bottom: 24px; color: #eaeaea;
+}
+.course-price {
+  font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 600;
+  margin-bottom: 18px; color: #ffe3c4;
+}
+.course-price span { font-size: 1.7rem; font-weight: 800; color: #fff; }
+
+.buy-btn {
+  background:#fff; color:#222; font-size:1rem; font-weight:700;
+  padding:12px 28px; border-radius:8px; border:none; cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.2); transition:.3s;
+}
+.buy-btn:hover { background:#f1f1f1; transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .course-info {
+    position: absolute;
+    bottom: 30%; /* було 50%, тепер нижче */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    padding: 16px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+  .course-info h2,
+  .course-subtitle,
+  .course-desc,
+  .course-price {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buy-btn {
+    align-self: center;
+  }
+
+
+
+/* ===== "ЩО ВИ ОТРИМАЄТЕ" ===== */
+.benefits-section { 
+  margin-top: 120px; 
+  position: relative; 
+  z-index: 1; 
+}
+
+.benefits-card {
+  background:#607d8b;
+  padding:70px 50px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.4), inset 0 0 10px rgba(255,255,255,.05);
+  border:2px solid rgba(255,255,255,.05);
+  backdrop-filter: blur(16px);
+  animation: fadeUp .9s ease-out both;
+}
+
+.benefits-info { 
+  color:#e0f2f1; 
+  text-align:center; 
+}
+
+.benefits-info h2 { 
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+               "Apple Color Emoji", "Segoe UI Emoji";
+  font-size:2.6rem; 
+  font-weight:900; 
+  margin-bottom:30px; 
+  color:#fff; 
+}
+
+/* Таймлайн */
+.benefits-list {
+  list-style:none; 
+  padding:0; 
+  margin:35px 0;
+  display:grid; 
+  grid-template-columns:1fr; 
+  gap:0; 
+  position:relative;
+}
+
+.benefits-list::before {
+  content:"";
+  position:absolute;
+  left:14px; top:0; bottom:32px;
+  width:2px;
+  background:rgba(0,0,0,.12);
+  animation: tlDraw .5s ease-out forwards;
+}
+
+.benefits-list li {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+               "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 1.05rem;
+  color: #fff;
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: itemIn .38s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+.benefits-list li::before {
+  content:"";
+  position:absolute;
+  left:6px; top:6px;
+  width:14px; height:14px;
+  background:#fff;
+  border:2px solid rgba(0,0,0,.15);
+  border-radius:50%;
+  transform: scale(.6);
+  opacity:0;
+  animation: dotPop .28s ease-out forwards;
+}
+
+/* Передостаннє — Bad Script, збільшений розмір, відступ знизу */
+.benefits-highlight .highlight-sub {
+  font-family: 'Bad Script', cursive;
+  font-size: clamp(1.3rem, 4.8vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px; /* відступ між передостаннім і останнім */
+}
+
+/* Останнє — системний, трохи менший */
+.benefits-highlight .highlight-main {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+               "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: clamp(1.1rem, 4.2vw, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+@keyframes fadeUp { 
+  0%{opacity:0; transform:translateY(60px)} 
+  100%{opacity:1; transform:translateY(0)} 
+}
+@keyframes tlDraw { to { transform: scaleY(1); } }
+@keyframes itemIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes dotPop { 
+  60% { transform: scale(1.1); opacity: 1; } 
+  100% { transform: scale(1); opacity: 1; } 
+}
+
+
+/* ===== "ЗМІСТ" ===== */
+.content-overview { margin-top:160px; background: transparent; }
+.content-wrapper-full {
+  display:flex; flex-wrap:nowrap; width:100%;
+  min-height:520px; border-radius:0; overflow:visible; position:relative; background:#607d8b;
+}
+.content-img-full { flex:0 0 42%; background:#0e0e0e; overflow:hidden; position:relative; }
+.content-img-full img { width:100%; height:100%; object-fit: cover; display:block; position:relative; z-index:2; }
+.content-text-full {
+  flex:1; padding:50px 40px; background:transparent; color:#fff;
+  display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2;
+}
+.content-text-full h2 { font-size:2.6rem; font-weight:900; margin-bottom:22px; color:#fff; letter-spacing:2px; }
+.content-text-full .intro-subtitle { font-family:'Bad Script',cursive; font-size:1.3rem; margin-bottom:24px; line-height:1.6; color:#f0f0f0; }
+.content-list { list-style:none; padding-left:0; margin-top:26px; }
+.content-list li {
+  position:relative; padding-left:36px; margin-bottom:16px;
+  font-size:1.2rem; color:#fff; line-height:1.7; cursor:default; opacity:0; transform: translateY(30px);
+  animation: fadeBullet .8s ease-out forwards;
+}
+.content-list li:nth-child(n+1) { animation-delay: calc(.1s * var(--i, 1)); }
+.list-num { font-weight:900; font-size:1.18em; min-width:48px; margin-right:12px; text-align:right; flex-shrink:0; display:inline-block; }
+.content-list li:hover { transform: translateX(8px) scale(1.02); color:#aff; text-shadow:0 0 6px rgba(0,240,255,.3); }
+
+@keyframes fadeBullet { to { opacity:1; transform: translateY(0); } }
+
+@media (max-width: 1024px) {
+  .content-text-full { padding:40px 30px; }
+  .content-text-full h2 { font-size:2.2rem; }
+}
+@media (max-width: 768px) {
+  .content-wrapper-full { 
+    flex-direction: column; 
+    min-height: unset; 
+  }
+
+  .content-img-full { 
+    width: 220px;         /* однакові значення */
+    height: 220px;
+    margin: 0 auto;       
+    border-radius: 50%; 
+     margin: 30px auto 0; 
+    overflow: hidden; 
+    background: transparent; 
+    flex: 0 0 auto;       /* фіксуємо розмір */
+  }
+
+  .content-img-full img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 50%; 
+    display: block; 
+  }
+
+  .content-text-full { 
+    padding: 30px 20px; 
+  }
+
+  .content-text-full h2 { 
+    font-size: 2rem; 
+    text-align: center; 
+  }
+
+  .content-text-full .intro-subtitle { 
+    font-size: 1rem; 
+    text-align: center; 
+  }
+
+  .content-list { 
+    margin-top: 20px; 
+  }
+
+  .content-list li { 
+    font-size: .95rem; 
+    padding-left: 30px; 
+  }
+}
+
+
+
+/* ===== MOTIVATION ===== */
+/* ===== MOTIVATION ===== */
+.motivation-section {
+  position: relative; max-width:1000px; margin:100px auto; border-radius:0; overflow:hidden;
+  min-height:1300px; box-shadow:0 30px 80px rgba(0,0,0,.35); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.motivation-img { position:absolute; inset:0; z-index:1; }
+.motivation-img img { width:100%; height:100%; object-fit:cover; object-position:center; filter:brightness(1) contrast(1.05) saturate(1.1); transition:transform 1s ease; }
+.motivation-section:hover .motivation-img img { transform:scale(1.02); }
+.motivation-overlay { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; padding:60px 32px; pointer-events:none; }
+.motivation-text {
+  position:relative; z-index:3; width:100%; max-width:100%;
+  padding:20px 24px; background:rgba(0,0,0,.25); border-radius:16px; backdrop-filter:blur(4px);
+  box-shadow:0 0 12px rgba(0,0,0,.3); margin-bottom:32px; pointer-events:all; text-align:center;
+}
+.motivation-text h2 { font-size:2.6rem; font-weight:900; margin-bottom:20px; color:#fff; }
+.motivation-text p  { font-size:1.2rem; line-height:1.7; color:#fff; margin-bottom:12px; }
+
+@media (max-width:1024px) {
+  .motivation-section { margin:60px 20px; min-height:90vh; }
+  .motivation-text h2 { font-size:2.2rem; }
+  .motivation-text p  { font-size:1.1rem; }
+}
+
+/* === MOBILE FIX: повертаємо потік, щоб блок не зникав === */
+@media (max-width:600px) {
+  .motivation-section{
+    min-height: auto !important;
+    margin: 12px auto !important;   /* невеликий відступ між секціями */
+    padding: 0 !important;
+    box-shadow: none;
+  }
+
+  /* замість absolute робимо звичайний потік */
+  .motivation-overlay{
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .motivation-text{
+    position: static !important;
+    margin: 0 !important;
+    padding: 8px 16px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    color: #333;
+  }
+
+  .motivation-text h2,
+  .motivation-text p{
+    color:#333;
+    margin: 0 !important;
+  }
+
+  /* картинку ховаємо як і було */
+  .motivation-img{ display:none !important; }
+}
+
+
+
+
+/* ===== FOOTER / LINKS ===== */
+.socials { margin-top:18px; display:flex; justify-content:center; gap:16px; }
+.social-icon {
+  width:44px; height:44px; background:#fafafa; border-radius:12px;
+  display:grid; place-items:center; color:#3c454c; box-shadow:0 1px 5px rgba(60,70,80,.06);
+  transition: background .16s, box-shadow .18s, transform .14s; cursor:pointer; border:none;
+}
+.social-icon svg { width:25px; height:25px; fill: currentColor; display:block; }
+.social-icon:hover { background:#f0f0f0; box-shadow:0 2px 10px rgba(60,70,80,.12); transform: scale(1.07); }
+
+.privacy-policy { text-align:center; margin-top:40px; font-size:.95rem; color:#333; }
+.privacy-policy a { text-decoration:none; color:#607d8b; font-weight:600; letter-spacing:.03em; transition: color .3s ease; }
+.privacy-policy a:hover { color:#00f0ff; }
+
+.footer {
+  margin-top:40px; text-align:center; padding:20px 0; background:#f8f8f8; color:#333;
+  font-size:.95rem; border-top:1px solid #e0e0e0;
+}
+.footer p { margin-top:10px; font-size:.9rem; }
+
+/* ===== SCROLL ANIMS ===== */
+.fade-in-up { opacity:0; transform: translateY(40px); transition: opacity .9s ease, transform .9s ease; will-change: opacity, transform; }
+.fade-in-up.visible { opacity:1; transform: translateY(0); }

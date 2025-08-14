@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лікар-Кардіолог Ірина Миринюк</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Сучасні Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@700&family=Montserrat:wght@400;700;800&family=Commissioner:wght@400;700&family=Poppins:wght@400;600;700&family=Bad+Script&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="new-header">
+  <div class="nav-container">
+   <div class="logo-text heavy-font">MI.CARDIOLOGIST</div>
+    <nav class="navbar" id="navbar">
+      <a href="#courses">Гайд</a>
+      <a href="#benefits">Що ви отримаєте</a>
+      <a href="#about">Зміст</a>
+      
+    </nav>
+    <div class="burger" id="burger">&#9776;</div>
+  </div>
+</header>
+
+<section id="courses" class="course-section container fade-in-up">
+  <div class="course-card glassed">
+    <div class="course-info">
+      <h2 class="section-title heavy-font">ГАЙД ВІД ЛІКАРЯ-КАРДІОЛОГА</h2>
+      <p class="script-font course-subtitle">«Як зберегти серце здоровим без значних обмежень в харчуванні?»</p>
+      <p class="course-desc accent-font">Практичні поради для здоровʼя серця та комфортного способу життя</p>
+      <p class="course-price price-font">Ціна: <span>290 грн</span></p>
+      <button id="buy-open" class="buy-btn pulse-btn accent-font">ПРИДБАТИ ГАЙД</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Modal 1: Введення e-mail ===== -->
+<div id="buy-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog">
+    <button class="modal-close" data-close aria-label="Закрити">&times;</button>
+    <h3 id="modal-title" class="heavy-font">Придбати гайд</h3>
+    <p class="accent-font">Введіть e-mail. Після оплати посилання прийде на пошту і з’явиться на екрані.</p>
+    <form id="buy-form" novalidate>
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" />
+      <small id="email-error" class="error" aria-live="polite"></small>
+      <button type="submit" class="buy-btn pulse-btn accent-font">Перейти до оплати — 480 грн</button>
+    </form>
+    <div id="pay-status" class="status" hidden>Готуємо оплату…</div>
+  </div>
+</div>
+
+<!-- ===== Modal 2: Оплата через кнопку WayForPay ===== -->
+<div id="processing-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="processing-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog">
+    <button class="modal-close" data-close aria-label="Закрити">&times;</button>
+    <h3 id="processing-title" class="heavy-font">Переходимо до оплаті…</h3>
+    <p class="accent-font">Натисніть кнопку нижче, щоб перейти на оплату.</p>
+    <a href="https://secure.wayforpay.com/button/b61bfd0293b5c" class="buy-btn pulse-btn accent-font" target="_blank">Оплатити гайд — 480 грн</a>
+    <button type="button" class="btn-ghost" data-close>Скасувати</button>
+  </div>
+</div>
+
+
+
+
+<section id="benefits" class="benefits-section container fade-in-up">
+  <div class="benefits-card glassed">
+    <div class="benefits-info">
+      <h2 class="section-title heavy-font" style="font-size:1.6rem; white-space:normal;">
+        Що Ви отримаєте в гайді?
+      </h2>
+
+      <ul class="benefits-list">
+        <li><strong>Як їсти смачно</strong> та з користю для серця?</li>
+        <li><strong>Як нормалізувати</strong> артеріальний тиск, рівень холестерину і <strong>знизити</strong> ризики інфаркту за допомогою правильного раціону?</li>
+        <li><strong>Як вживати</strong> улюблені продукти розумно, <strong>без шкоди</strong> для здоров’я?</li>
+        <li><strong>Які</strong> дієти працюють реально,  не в теорії?</li>
+       
+      </ul>
+
+      <div class="benefits-highlight" style="font-family:'Bad Script', cursive;">
+        <p class="highlight-sub">Це сторінка, яку ви захочете зберегти!</p>
+        <p class="highlight-main">Це гайд, який варто мати кожному, хто хоче прожити своє найкраще життя!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="about" class="content-overview container">
+  <div class="content-wrapper-full">
+    <div class="content-img-full">
+      <img src="img/IMG_2887.JPG" alt="Серце здоров’я">
+    </div>
+    <div class="content-text-full">
+      <h2 class="fade-sequence section-title heavy-font" data-delay="0.1s">ЗМІСТ</h2>
+      <p class="intro-subtitle fade-sequence script-font" data-delay="0.2s">Попередити виникнення серцево-судинних захворювань можна!</p>
+      <p class="fade-sequence accent-font" data-delay="0.3s">Без погіршення рівню життя, без виснажливих дієт, без жорстких заборон.</p>
+      <p class="fade-sequence accent-font" data-delay="0.4s">Цей гайд — не черговий список «не можна», а навпаки — практичний інструмент для того, щоб почати піклуватись про серце вже сьогодні з <span class="heavy-font">реальними дієвими порадами</span>.</p>
+      <p class="fade-sequence script-font" data-delay="0.5s">Це не просто файл із текстом. Це <span class="script-font">інвестиція в себе: у свою енергію, сон та хороший настрій</span>.</p>
+      <ul class="content-list">
+        <li class="fade-sequence" data-delay="0.6s"><span class="list-num">01.</span> Гарвардська тарілка — візуальний інструмент збалансованого харчування</li>
+        <li class="fade-sequence" data-delay="0.7s"><span class="list-num">02.</span> DASH дієта — раціон проти гіпертонії</li>
+        <li class="fade-sequence" data-delay="0.8s"><span class="list-num">03.</span> Середземноморська дієта — найпростіший шлях до продовження тривалості життя</li>
+        <li class="fade-sequence" data-delay="0.9s"><span class="list-num">04.</span> Дієта Портфоліо — дієта для реальних людей в реальному світі</li>
+        <li class="fade-sequence" data-delay="1.0s"><span class="list-num">05.</span> Прості та дієві кроки до здорового серця від кардіолога (відео про 5 кроків + текст про 7 кроків)</li>
+        <li class="fade-sequence" data-delay="1.1s"><span class="list-num">06.</span> Паління — найшвидший шлях до інфаркту</li>
+        <li class="fade-sequence" data-delay="1.2s"><span class="list-num">07.</span> Цукор — як легко зменшити кількість його вживання</li>
+        <li class="fade-sequence" data-delay="1.3s"><span class="list-num">08.</span> Сіль — яка норма? кому скільки споживати?</li>
+        <li class="fade-sequence" data-delay="1.4s"><span class="list-num">09.</span> Яйця — друзі чи вороги для серця?</li>
+        <li class="fade-sequence" data-delay="1.5s"><span class="list-num">10.</span> Кава і серце — користь чи стрес у чашці?</li>
+        <li class="fade-sequence" data-delay="1.6s"><span class="list-num">11.</span> Алкоголь — вплив на серце, що таке стандартна доза?</li>
+        <li class="fade-sequence" data-delay="1.7s"><span class="list-num">12.</span> Один в полі не воїн — 8 порад для комфортного переходу на здоровий раціон для всієї родини</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="motivation" class="motivation-section container fade-in-up">
+  <div class="motivation-img">
+    <img src="img/IMG_0853.JPG" alt="Мотиваційне фото" />
+  </div>
+  <div class="motivation-overlay">
+    <div class="motivation-text">
+   
+      <p class="fade-in-up">Нехай кожна прочитана сторінка стане <span class="script-font">початком нової корисної звички</span>.</p>
+      <p class="fade-in-up">Нехай кожна звичка буде <span class="script-font">про турботу</span>.</p>
+      <p class="heavy-font fade-in-up">Обирайте себе. <span class="script-font">Почніть сьогодні.</span></p>
+    </div>
+  </div>
+</section>
+
+
+<div class="socials">
+  <a href="https://www.instagram.com/mi.cardiologist/profilecard/?igsh=dXFtZ3dsenVkbWw3" class="social-icon" target="_blank" rel="noopener">
+    <!-- SVG Instagram outline -->
+    <svg viewBox="0 0 50 50">
+      <rect x="7" y="7" width="36" height="36" rx="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="25" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="33.5" cy="16.5" r="1.7" fill="currentColor"/>
+    </svg>
+  </a>
+  <a href="https://www.facebook.com/share/1Aq2LG6GRN/?mibextid=wwXIfr" class="social-icon" target="_blank" rel="noopener">
+    <!-- SVG Facebook outline -->
+    <svg viewBox="0 0 50 50">
+      <g>
+        <rect x="7" y="7" width="36" height="36" rx="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M31 25h-4v12h-5V25h-3v-4h3v-2c0-2.5 1.2-6 6-6l4 .02v4.45h-2.6c-.45 0-1.09.22-1.09 1.18v2.35H31l-1 4z"
+         fill="currentColor"/>
+      </g>
+    </svg>
+  </a>
+</div>
+
+
+<div class="privacy-policy">
+  <a href="terms.html">Правила і умови</a> ·
+  <a href="refund.html">Повернення коштів</a> ·
+  <a href="payment-delivery.html">Оплата та надання послуги</a> ·
+  <a href="privacy.html">Політика конфіденційності</a> ·
+  <a href="contacts.html">Контакти</a>
+</div>
+
+
+
+<script>
+  // Для .fade-in-up (можливо інші секції)
+  const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll('.fade-in-up').forEach(el => fadeInObserver.observe(el));
+</script>
+
+<script>
+  // Меню бургер
+  const burger = document.getElementById("burger");
+  const navbar = document.getElementById("navbar");
+
+  burger.addEventListener("click", () => {
+    navbar.classList.toggle("show");
+  });
+
+  // Закриваємо меню при кліку на будь-який пункт
+  const navLinks = navbar.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navbar.classList.remove("show");
+    });
+  });
+</script>
+
+<script>
+  // Для benefits-list li
+  const listObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.benefits-list li').forEach(li => {
+    listObserver.observe(li);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll('.fade-sequence');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        const delay = el.getAttribute('data-delay') || '0s';
+
+        if (entry.isIntersecting) {
+          el.style.transitionDelay = delay;
+          el.classList.add('visible');
+        } else {
+          el.classList.remove('visible'); // повертай назад, якщо хочеш "оживати" при кожному появленні
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const guides = document.querySelectorAll('.guide');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    guides.forEach((guide, index) => {
+      const delay = 0.1 * (index + 1);
+      guide.style.setProperty('--delay', `${delay}s`);
+      guide.setAttribute('data-delay', '');
+      observer.observe(guide);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeTextElements = document.querySelectorAll('.fade-in-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible'); // для повторної анімації
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    fadeTextElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+
+<script>
+(function(){
+  const openBtn = document.getElementById('buy-open');
+  const modal1 = document.getElementById('buy-modal');
+  const modal2 = document.getElementById('processing-modal');
+  const form = document.getElementById('buy-form');
+  const emailInput = document.getElementById('email');
+  const emailErr = document.getElementById('email-error');
+  const statusEl = document.getElementById('pay-status');
+
+  const lock = () => document.body.style.overflow = 'hidden';
+  const unlock = () => document.body.style.overflow = '';
+  const show = m => { m.classList.add('show'); m.setAttribute('aria-hidden','false'); lock(); };
+  const hide = m => { m.classList.remove('show'); m.setAttribute('aria-hidden','true'); unlock(); };
+  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  document.querySelectorAll('#buy-modal [data-close], #processing-modal [data-close]').forEach(el => {
+    el.addEventListener('click', () => { hide(modal1); hide(modal2); });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { hide(modal1); hide(modal2); } });
+
+  openBtn.addEventListener('click', () => { show(modal1); setTimeout(() => emailInput.focus(), 0); });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    emailErr.textContent = '';
+    const email = emailInput.value.trim();
+    if (!validEmail(email)) {
+      emailErr.textContent = 'Введіть коректний e-mail';
+      emailInput.focus();
+      return;
+    }
+    localStorage.setItem('buyer_email', email);
+    statusEl.hidden = false;
+    statusEl.textContent = 'Готово! Тисни кнопку для оплати.';
+
+    hide(modal1);
+    show(modal2);
+  });
+})();
+</script>
+
+
+
+
+
+</body>
+</html>
